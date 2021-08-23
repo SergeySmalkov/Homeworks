@@ -1,3 +1,4 @@
+// Online C++ compiler to run C++ program online
 #include <iostream>
 #include <cmath>
 #include <math.h>
@@ -145,14 +146,16 @@ public:
     ~Quadrilateral(){}
 };
 
+
 template <class T>
 class Square: public Quadrilateral<T>{
+
 public:
     Square(): Quadrilateral<T>(){}
     ~Square(){}
-    //T SQ(){
-    //    return(pow(length(Array_of_points[0],Array_of_points[1]),2));
-    //}
+    T SQ(){
+        return(pow(length(Polygon<T>::Array_of_points[0],Polygon<T>::Array_of_points[1]),2));
+    }
 };
 
 template <class T>
@@ -197,6 +200,6 @@ int main() {
     Square<double> square = Square<double>();
     square.Parallel_move(q);
     square.Print();
-    //std::cout << square.Array_of_points[3];
+    std::cout << square.SQ();
     return 0;
 }
